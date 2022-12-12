@@ -14,7 +14,7 @@ const PokemonData = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+      "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
     );
 
     if (response.status !== 200) {
