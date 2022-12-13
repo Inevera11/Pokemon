@@ -12,11 +12,11 @@ const fetchData = async () => {
 
   const data = await response.json();
 
-  console.log("data json", data);
+  console.log("wnetrze fetcha", data);
   return data;
 };
 
-export const PokemonData = () => {
+export const usePokemonData = () => {
   const [data, setData] = useState<Pokemon[]>([]);
   console.log("value", data);
 
@@ -31,8 +31,6 @@ export const PokemonData = () => {
       .catch((err) => console.log(err.message));
     console.log("fetchuję");
   }
-
-  console.log("pokemon data", data);
 
   if (quantity !== 0) {
     return data;

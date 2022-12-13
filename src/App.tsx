@@ -1,14 +1,17 @@
 import { Header } from "./components/Header";
-import { Cards } from "./features/Cards";
-import Button from "./components/Button";
-
+import MyCards from "./components/Routes/MyCards";
+import { Route, Routes } from "react-router";
+import Home from "./components/Routes/Home";
 function App() {
   console.log("hello");
   return (
     <div>
       <Header />
-      <Button onClick={() => console.log("data")} />
-      <Cards />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/myCards" element={<MyCards />} />
+        <Route />
+      </Routes>
     </div>
   );
 }
