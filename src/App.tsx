@@ -1,20 +1,14 @@
-import React from "react";
-import PokemonData from "./data/Pokemons";
+import React, { useMemo } from "react";
+import { PokemonData } from "./data/Pokemons";
+import { Header } from "./components/Header";
+import { Cards } from "./features/Cards";
+import Button from "./components/Button";
 function App() {
-  PokemonData();
   return (
     <div className="App">
-      <header className="App-header">
-        <div></div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Button onClick={() => console.log("data")} />
+      <Cards />
     </div>
   );
 }

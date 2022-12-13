@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "name": "Bulbosaur",
+    "image": "../data/pokem.jpg",
+    "skill1": "fire",
+    "skill2": "water"
+  },
+  {
+    "id": 1,
+    "name": "Pikachu",
+    "image": "../data/pokem.jpg",
+    "skill1": "fire",
+    "skill2": "water"
+  },
+  {
+    "id": 2,
+    "name": "ratatata",
+    "image": "/data/pokem.jpg",
+    "skill1": "fire",
+    "skill2": "water"
+  },
+  {
+    "id": 3,
+    "name": "dragon",
+    "image": "../data/pokem.jpg",
+    "skill1": "fire",
+    "skill2": "water"
+  },
+  {
+    "id": 4,
+    "name": "Bulbosaur@",
+    "image": "../data/pokem.jpg",
+    "skill1": "fire",
+    "skill2": "water"
+  }
+]
