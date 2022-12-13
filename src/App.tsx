@@ -1,11 +1,11 @@
-import React, { useMemo } from "react";
-import { PokemonData } from "./data/Pokemons";
 import { Header } from "./components/Header";
 import { Cards } from "./features/Cards";
 import Button from "./components/Button";
+
 function App() {
+  console.log("hello");
   return (
-    <div className="App">
+    <div>
       <Header />
       <Button onClick={() => console.log("data")} />
       <Cards />
