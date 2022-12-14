@@ -9,30 +9,33 @@ const fetchData = async () => {
   if (response.status !== 200) {
     throw new Error("cannot fetch the data");
   }
-
   const data = await response.json();
+  return data;
+};
 
-  console.log("wnetrze fetcha", data);
+const fetchMoreData = async (url: string) => {
+  const response = await fetch(url);
+  if (response.status !== 200) {
+    throw new Error("cannot fetch the data");
+  }
+  const data = await response.json();
   return data;
 };
 
 export const usePokemonData = () => {
   const [data, setData] = useState<Pokemon[]>([]);
-  console.log("value", data);
-
-  const quantity = data.reduce((total) => total + 1, 0);
-  console.log(quantity, "ilosc");
-
-  if (quantity === 0) {
+  useEffect(() => {
     fetchData()
       .then((data) => {
-        setData(data.results);
+        data.results.forEach((pokemon: { name: string; url: string }) =>
+          fetchMoreData(pokemon.url).then((data) =>
+            setData((currData) => [...currData, data])
+          )
+        );
       })
       .catch((err) => console.log(err.message));
-    console.log("fetchuję");
-  }
-
-  if (quantity !== 0) {
+  }, []);
+  if (data.length === 400) {
     return data;
   }
 };

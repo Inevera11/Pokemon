@@ -1,7 +1,7 @@
 import { Header } from "./components/Header";
-import MyCards from "./components/Routes/MyCards";
+import MyCards from "./Routes/MyCards";
 import { Route, Routes } from "react-router";
-import Home from "./components/Routes/Home";
+import Home from "./Routes/Home";
 function App() {
   console.log("hello");
   return (

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import pokemonData from "../data/dummy.json";
 import { Card } from "../components/Card";
 import pikachu from "../data/pokem.jpg";
+import { usePokemonData } from "../data/Pokemons";
+import { Pokemon } from "../types/interfaces";
 
 const DeckStyled = styled.div`
   display: flex;
@@ -13,6 +15,11 @@ const DeckStyled = styled.div`
 `;
 
 export const Cards = () => {
+  const getData = async () => {
+    const data = (await usePokemonData) as () => Pokemon[];
+    return data;
+  };
+
   return (
     <DeckStyled>
       {pokemonData.map((item) => (
@@ -24,6 +31,7 @@ export const Cards = () => {
           skill2={item.skill2}
         />
       ))}
+      )
     </DeckStyled>
   );
 };
