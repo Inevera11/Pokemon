@@ -1,5 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Pokemon } from "../types/interfaces";
+
+type Props = {
+  data: [];
+  second: string | undefined;
+  index: number;
+};
+
+const checkType = (val: string | undefined) => {
+  if (typeof val === "string") return val;
+  else return "none";
+};
+
+const checkIfExist = (data: [], second: string, index: number) => {
+  if (data.length === 0) return "";
+  if (data.length === index) return second;
+};
 
 const fetchData = async (url: string) => {
   const response = await fetch(url);
@@ -25,9 +41,18 @@ export const usePokemonData = () => {
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
                 data.id +
                 ".png",
-              type1: data.types,
+              type1: checkIfExist(
+                data.types,
+                checkType(data.types[0].type.name),
+                1
+              ),
+              type2: checkIfExist(
+                data.types,
+                checkType(data.types[1].type.name),
+                2
+              ),
             };
-            console.log(data.types);
+
             setData((currData) => [...currData, newPokemon]);
           })
         );

@@ -4,21 +4,13 @@ import { Card } from "../components/Card";
 import pikachu from "../data/pokem.jpg";
 import { usePokemonData } from "../data/Pokemons";
 import { Pokemon } from "../types/interfaces";
-
-const DeckStyled = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  align-content: space-around;
-`;
+import { DeckStyled } from "../styles/StylesMyCards";
 
 export const Cards = () => {
   const data = usePokemonData().slice(0, 20);
 
   function getRandomInt(max: number) {
-    return Math.floor(Math.random() * max * 1);
+    return Math.floor(Math.random() * max * 10);
   }
 
   return (
@@ -28,11 +20,12 @@ export const Cards = () => {
       ) : (
         data.map((item) => (
           <Card
-            key={item.id}
+            key={getRandomInt(1000) * getRandomInt(item.id as number)}
             id={item.id}
             title={item.name}
             img={item.img}
-            types={item.type1 ? item.type1 : "none"}
+            type1={item.type1 as string}
+            type2={item.type2 as string}
           />
         ))
       )}

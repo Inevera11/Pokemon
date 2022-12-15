@@ -1,17 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import { Cards } from "../features/Cards";
-import styled from "styled-components";
-
-const MyCardsStyled = styled.div`
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
+import { MyCardsStyled } from "../styles/StylesMyCards";
 const MyCards = () => {
   return (
     <MyCardsStyled>
