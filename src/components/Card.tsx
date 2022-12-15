@@ -15,35 +15,52 @@ const StyledCard = styled.div`
   border-style: double;
 `;
 
+const IdStyled = styled.h1`
+  font-style: italic;
+  font-variant: petite-caps;
+  margin: 0.5rem 0;
+  color: #29272766;
+`;
+
 const SkillsStyled = styled.div`
   margin: 0.2rem 0.9rem;
   font-size: 1.5em;
 `;
 
 const TitleStyled = styled.p`
+  font-variant: petite-caps;
   font-size: 3em;
   align-self: center;
-  margin: 0;
+  margin: 0.7rem 0.5rem;
+  font-weight: 700;
+  color: #3e0000cc;
 `;
 const Image = styled.img`
   width: 90%;
   align-self: center;
 `;
+
+const CardTitle = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
 type Props = {
   title: string;
+  id: number | undefined;
   img: string;
-  skill1: string;
-  skill2: string;
+  types: string | [];
 };
 
-export const Card = ({ title, img, skill1, skill2 }: Props) => {
+export const Card = ({ id, title, img, types }: Props) => {
   return (
     <StyledCard>
-      <TitleStyled>{title}</TitleStyled>
+      <CardTitle>
+        <IdStyled>#{id}</IdStyled>
+        <TitleStyled>{title}</TitleStyled>
+      </CardTitle>
       <Image src={img} />
       <div>
-        <SkillsStyled>{skill1}</SkillsStyled>
-        <SkillsStyled>{skill2}</SkillsStyled>
+        <SkillsStyled>{types}</SkillsStyled>
       </div>
     </StyledCard>
   );

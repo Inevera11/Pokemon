@@ -15,22 +15,27 @@ const DeckStyled = styled.div`
 `;
 
 export const Cards = () => {
-  const getData = async () => {
-    const data = (await usePokemonData) as () => Pokemon[];
-    return data;
-  };
+  const data = usePokemonData().slice(0, 20);
+
+  function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max * 1);
+  }
 
   return (
     <DeckStyled>
-      {pokemonData.map((item) => (
-        <Card
-          key={item.id}
-          title={item.name}
-          img={pikachu}
-          skill1={item.skill1}
-          skill2={item.skill2}
-        />
-      ))}
+      {data.length === 0 ? (
+        <div>loading...</div>
+      ) : (
+        data.map((item) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            title={item.name}
+            img={item.img}
+            types={item.type1 ? item.type1 : "none"}
+          />
+        ))
+      )}
       )
     </DeckStyled>
   );

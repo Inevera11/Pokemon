@@ -8,8 +8,10 @@ body {
 
   height: 100vh;
   
-    background: linear-gradient(254deg, rgba(187, 9, 9, 0.878) 19%, rgba(158, 4, 32, 0.702) 68%,rgba(203, 16, 16, 0.702) 78%, rgba(237, 65, 12, 0.896) 90%);
-}
+    
+ background: rgb(220, 46, 46);
+ 
+background: radial-gradient(circle, rgba(220, 46, 46, 0.8776610986191351) 19%, rgba(239, 66, 13, 0.8272409305519083) 42%, rgba(255, 0, 19, 0.732002835313813) 62%, rgba(237, 75, 12, 0.8356442918964461) 95%);}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

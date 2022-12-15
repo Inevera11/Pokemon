@@ -1,4 +1,4 @@
-import { Header } from "./components/Header";
+import { Header } from "./features/Header";
 import MyCards from "./Routes/MyCards";
 import { Route, Routes } from "react-router";
 import Home from "./Routes/Home";
