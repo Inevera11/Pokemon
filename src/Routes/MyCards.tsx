@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../components/Button";
 import { Cards } from "../features/Cards";
 import { MyCardsStyled } from "../styles/StylesMyCards";
-import { useGetCoins } from "../context/getCoinsContext";
+import { useLoaderData } from "react-router";
 
 const MyCards = () => {
   return (

@@ -1,9 +1,10 @@
+import { useLoaderData } from "react-router";
 import { Card } from "../components/Card";
-import { usePokemonData } from "../data/Pokemons";
 import { DeckStyled } from "../styles/StylesMyCards";
+import { Pokemon } from "../types/interfaces";
 
 export const Cards = () => {
-  const data = usePokemonData().slice(0, 20);
+  const data = (useLoaderData() as Pokemon[]).slice(0, 20);
 
   return (
     <DeckStyled>

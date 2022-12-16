@@ -20,15 +20,15 @@ export const usePokemonData = () => {
 
       const arrayOfPokemons: Pokemon[] = [];
       for await (const pokemon of allPokemonsData) {
-        const pokemonData = await fetchData(pokemon.url);
+        const { id, name, types } = await fetchData(pokemon.url);
         const newPokemon = {
-          id: pokemonData.id,
-          name: pokemonData.name,
+          id,
+          name,
           img:
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-            pokemonData.id +
+            id +
             ".png",
-          types: pokemonData.types.map(
+          types: types.map(
             (pokemonType: { type: { name: string } }) => pokemonType.type.name
           ),
         };
