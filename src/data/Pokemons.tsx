@@ -13,27 +13,31 @@ const fetchData = async (url: string) => {
 export const usePokemonData = () => {
   const [data, setData] = useState<Pokemon[]>([]);
   useEffect(() => {
-    console.log("fetchuję");
-    fetchData("https://pokeapi.co/api/v2/pokemon?limit=200&offset=0")
-      .then((data) => {
-        data.results.forEach((pokemon: { name: string; url: string }) =>
-          fetchData(pokemon.url).then((data) => {
-            const newPokemon = {
-              id: data.id,
-              name: data.name,
-              img:
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-                data.id +
-                ".png",
-              type1: data.types[0].type.name,
-              type2: data.types[1].type.name,
-            };
+    const fetchPokemonData = async () => {
+      const { results: allPokemonsData } = await fetchData(
+        "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
+      );
 
-            setData((currData) => [...currData, newPokemon]);
-          })
-        );
-      })
-      .catch((err) => console.log(err.message));
+      const arrayOfPokemons: Pokemon[] = [];
+      for await (const pokemon of allPokemonsData) {
+        const pokemonData = await fetchData(pokemon.url);
+        const newPokemon = {
+          id: pokemonData.id,
+          name: pokemonData.name,
+          img:
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+            pokemonData.id +
+            ".png",
+          types: pokemonData.types.map(
+            (pokemonType: { type: { name: string } }) => pokemonType.type.name
+          ),
+        };
+        arrayOfPokemons.push(newPokemon);
+      }
+      console.log("xD");
+      setData(arrayOfPokemons);
+    };
+    fetchPokemonData();
   }, []);
 
   return data;

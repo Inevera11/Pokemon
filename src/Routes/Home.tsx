@@ -11,7 +11,6 @@ const Home = () => {
     <HomeStyled>
       <TitleStyled>Your Pokemons collection</TitleStyled>
       <PikachuStyled src={pokemon} />
-
       <SubtitleStyled> Start collecting your Pokemons today!</SubtitleStyled>
       <NavLinkStyled to="/myCards">Show collection</NavLinkStyled>
     </HomeStyled>

@@ -11,11 +11,10 @@ type Props = {
   title: string;
   id: number | undefined;
   img: string;
-  type1: string;
-  type2: string;
+  types: Array<string>;
 };
 
-export const Card = ({ id, title, img, type1, type2 }: Props) => {
+export const Card = ({ id, title, img, types }: Props) => {
   return (
     <StyledCard>
       <CardTitle>
@@ -24,8 +23,9 @@ export const Card = ({ id, title, img, type1, type2 }: Props) => {
       </CardTitle>
       <Image src={img} />
       <AtributesStyled>
-        <SkillsStyled>{type1}</SkillsStyled>
-        <SkillsStyled>{type2}</SkillsStyled>
+        {types.map((type: string) => (
+          <SkillsStyled key={type}>{type}</SkillsStyled>
+        ))}
       </AtributesStyled>
     </StyledCard>
   );

@@ -1,3 +1,4 @@
+import { useGetCoins } from "../context/getCoinsContext";
 import logo from "../images/pokemon.png";
 import {
   NavbarStyled,
