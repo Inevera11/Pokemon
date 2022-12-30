@@ -26,12 +26,19 @@ type Props = {
   onClick: () => void;
 };
 
+const ButtonAndTextStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 45%;
+`;
+
 const Button = ({ onClick }: Props) => {
   return (
-    <>
-      <ButtonStyled onClick={onClick}>Buy new Pokemons</ButtonStyled>
+    <ButtonAndTextStyled>
       <SubtextStyled>5 coins</SubtextStyled>
-    </>
+      <ButtonStyled onClick={onClick}>Buy new Pokemons</ButtonStyled>
+    </ButtonAndTextStyled>
   );
 };
 

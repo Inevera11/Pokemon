@@ -3,8 +3,12 @@ import { Card } from "../components/Card";
 import { DeckStyled } from "../styles/StylesMyCards";
 import { Pokemon } from "../types/interfaces";
 
-export const Cards = () => {
-  const data = (useLoaderData() as Pokemon[]).slice(0, 20);
+type CardsType = {
+  pokemonNumber: number;
+};
+
+export const Cards = ({ pokemonNumber }: CardsType) => {
+  const data = (useLoaderData() as Pokemon[]).slice(0, pokemonNumber);
 
   return (
     <DeckStyled>

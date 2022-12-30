@@ -16,4 +16,5 @@ export const DeckStyled = styled.div`
   align-items: center;
   justify-content: space-evenly;
   align-content: space-around;
+  margin-top: 2rem;
 `;

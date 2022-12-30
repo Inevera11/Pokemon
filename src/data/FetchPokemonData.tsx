@@ -10,6 +10,7 @@ const fetchData = async (url: string) => {
 };
 
 const FetchPokemonData = async () => {
+  console.log("fetch");
   const { results: allPokemonsData } = await fetchData(
     "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
   );
