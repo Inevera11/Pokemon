@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React, { Dispatch, SetStateAction, useContext } from "react";
+import { getCoinsContext } from "../context/getCoinsContext";
 
 const ButtonStyled = styled.button`
   font-variant: petite-caps;
@@ -23,7 +25,7 @@ const SubtextStyled = styled.p`
 `;
 
 type Props = {
-  onClick: () => void;
+  setPokemonNumber: Dispatch<SetStateAction<number>>;
 };
 
 const ButtonAndTextStyled = styled.div`
@@ -33,11 +35,19 @@ const ButtonAndTextStyled = styled.div`
   margin-left: 45%;
 `;
 
-const Button = ({ onClick }: Props) => {
+const Button = ({ setPokemonNumber }: Props) => {
+  const { reduceCoins, coins } = useContext(getCoinsContext);
   return (
     <ButtonAndTextStyled>
       <SubtextStyled>5 coins</SubtextStyled>
-      <ButtonStyled onClick={onClick}>Buy new Pokemons</ButtonStyled>
+      <ButtonStyled
+        onClick={() => {
+          if (coins > 0) setPokemonNumber((number) => number + 5);
+          reduceCoins(5);
+        }}
+      >
+        Buy new Pokemons
+      </ButtonStyled>
     </ButtonAndTextStyled>
   );
 };
