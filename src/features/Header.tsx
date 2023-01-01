@@ -1,24 +1,37 @@
 import logo from "../images/pokemon.png";
 import { useContext } from "react";
+import coin from "../images/coin.png";
 
 import {
   NavbarStyled,
   LogoStyled,
+  CoinStyled,
   NavLinkStyled,
+  RightSideStyled,
+  CoinsStyled,
+  PlusStyled,
 } from "../styles/StyledHeader";
 import { getCoinsContext } from "../context/getCoinsContext";
 
 export const Header = () => {
-  const { coins } = useContext(getCoinsContext);
+  const { coins, moreCoins } = useContext(getCoinsContext);
 
   return (
     <NavbarStyled>
       <LogoStyled src={logo} />
-      <div>
-        <p>{coins}</p>
+      <RightSideStyled>
+        <PlusStyled
+          onClick={() => {
+            moreCoins(5);
+          }}
+        >
+          +
+        </PlusStyled>
+        <CoinsStyled>{coins}</CoinsStyled>
+        <CoinStyled src={coin} />
         <NavLinkStyled to="/">Home</NavLinkStyled>
         <NavLinkStyled to="/myCards">My Cards</NavLinkStyled>
-      </div>
+      </RightSideStyled>
     </NavbarStyled>
   );
 };

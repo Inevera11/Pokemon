@@ -18,3 +18,11 @@ export const DeckStyled = styled.div`
   align-content: space-around;
   margin-top: 2rem;
 `;
+export const PokemonBargainStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+`;
