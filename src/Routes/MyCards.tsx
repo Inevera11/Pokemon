@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
-import { Cards } from "../features/Cards";
+import Cards from "../features/Cards";
 import { MyCardsStyled, PokemonBargainStyled } from "../styles/StylesMyCards";
 import { SearchInput } from "../components/SearchInput";
 import OwnedPokemons from "../components/OwnedPokemons";
@@ -11,8 +11,13 @@ const MyCards = () => {
 
   return (
     <MyCardsStyled>
+      <SearchInput
+        setFilter={setFilter}
+        value={(e) =>
+          setFilter(e.target.value.toLowerCase().replace(/\s/g, ""))
+        }
+      />
       <PokemonBargainStyled>
-        <SearchInput value={(e) => setFilter(e.target.value)} />
         <Button setPokemonNumber={setPokemonNumber} />
         <OwnedPokemons pokemonNumber={pokemonNumber} />
       </PokemonBargainStyled>

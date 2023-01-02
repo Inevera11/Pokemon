@@ -7,6 +7,7 @@ import {
   AtributesStyled,
   SkillsStyled,
 } from "../styles/StyledCard";
+import React, { memo } from "react";
 type Props = {
   title: string;
   id: number | undefined;
@@ -14,7 +15,7 @@ type Props = {
   types: Array<string>;
 };
 
-export const Card = ({ id, title, img, types }: Props) => {
+const Card = ({ id, title, img, types }: Props) => {
   return (
     <StyledCard>
       <CardTitle>
@@ -30,3 +31,5 @@ export const Card = ({ id, title, img, types }: Props) => {
     </StyledCard>
   );
 };
+
+export default memo(Card);

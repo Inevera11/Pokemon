@@ -1,18 +1,14 @@
 import { useLoaderData } from "react-router";
-import { Card } from "../components/Card";
+import Card from "../components/Card";
 import { DeckStyled } from "../styles/StylesMyCards";
 import { Pokemon } from "../types/interfaces";
+import React, { memo } from "react";
+import { CardsType } from "../types/CardsType";
 
-type CardsType = {
-  pokemonNumber: number;
-  filter: string;
-};
-
-export const Cards = ({ pokemonNumber, filter }: CardsType) => {
+const Cards = ({ pokemonNumber, filter }: CardsType) => {
   const data = (useLoaderData() as Pokemon[]).slice(0, pokemonNumber);
   if (filter !== "") {
     data.filter((item) => item.name.includes(filter));
-    console.log(filter);
   }
 
   return (
@@ -35,3 +31,5 @@ export const Cards = ({ pokemonNumber, filter }: CardsType) => {
     </DeckStyled>
   );
 };
+
+export default memo(Cards);
