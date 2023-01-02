@@ -8,14 +8,9 @@ import {
   SkillsStyled,
 } from "../styles/StyledCard";
 import React, { memo } from "react";
-type Props = {
-  title: string;
-  id: number | undefined;
-  img: string;
-  types: Array<string>;
-};
+import { CardProps } from "../types/CardType";
 
-const Card = ({ id, title, img, types }: Props) => {
+const Card = ({ id, title, img, types }: CardProps) => {
   return (
     <StyledCard>
       <CardTitle>

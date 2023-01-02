@@ -6,6 +6,7 @@ import {
 import React, { memo, useContext } from "react";
 import { getCoinsContext } from "../context/getCoinsContext";
 import { ButtonTypes } from "../types/ButtonTypes";
+
 const Button = ({ setPokemonNumber }: ButtonTypes) => {
   const { reduceCoins, coins } = useContext(getCoinsContext);
   return (
