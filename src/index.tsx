@@ -2,13 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {
-  BrowserRouter,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { GetCoinsProvider } from "./context/GetCoinsProvider";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MyCards from "./Routes/MyCards";
-import { Pokemon } from "./types/interfaces";
+
 import Home from "./Routes/Home";
 import FetchPokemonData from "./data/FetchPokemonData";
 const root = ReactDOM.createRoot(

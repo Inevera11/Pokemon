@@ -1,5 +1,5 @@
-import React from "react";
 import { Pokemon } from "../types/interfaces";
+
 const fetchData = async (url: string) => {
   const response = await fetch(url);
   if (response.status !== 200) {
@@ -10,9 +10,9 @@ const fetchData = async (url: string) => {
 };
 
 const FetchPokemonData = async () => {
-  console.log("fetch");
+  const pokemonNumber = 65;
   const { results: allPokemonsData } = await fetchData(
-    "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
+    `https://pokeapi.co/api/v2/pokemon?limit=${pokemonNumber}&offset=0`
   );
 
   const arrayOfPokemons: Pokemon[] = [];

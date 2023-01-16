@@ -1,7 +1,5 @@
-import { Header } from "./features/Header";
-import MyCards from "./Routes/MyCards";
-import { Outlet, Route, Routes } from "react-router";
-import Home from "./Routes/Home";
+import Header from "./features/Header";
+import { Outlet } from "react-router";
 import { GetCoinsProvider } from "./context/GetCoinsProvider";
 function App() {
   console.log("hello");

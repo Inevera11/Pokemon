@@ -1,5 +1,5 @@
 import logo from "../images/pokemon.png";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import coin from "../images/coin.png";
 
 import {
@@ -13,7 +13,7 @@ import {
 } from "../styles/StyledHeader";
 import { getCoinsContext } from "../context/getCoinsContext";
 
-export const Header = () => {
+const Header = () => {
   const { coins, moreCoins } = useContext(getCoinsContext);
 
   return (
@@ -35,3 +35,5 @@ export const Header = () => {
     </NavbarStyled>
   );
 };
+
+export default memo(Header);

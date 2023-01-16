@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useMemo } from "react";
+import { getCoinsContext } from "../context/getCoinsContext";
 import Button from "../components/Button";
 import Cards from "../features/Cards";
 import { MyCardsStyled, PokemonBargainStyled } from "../styles/StylesMyCards";
@@ -6,8 +7,8 @@ import { SearchInput } from "../components/SearchInput";
 import OwnedPokemons from "../components/OwnedPokemons";
 
 const MyCards = () => {
-  const [pokemonNumber, setPokemonNumber] = useState<number>(20);
   const [filter, setFilter] = useState<string>("");
+  const { pokemonNumber } = useContext(getCoinsContext);
 
   return (
     <MyCardsStyled>
@@ -18,7 +19,7 @@ const MyCards = () => {
         }
       />
       <PokemonBargainStyled>
-        <Button setPokemonNumber={setPokemonNumber} />
+        <Button />
         <OwnedPokemons pokemonNumber={pokemonNumber} />
       </PokemonBargainStyled>
       <Cards pokemonNumber={pokemonNumber} filter={filter} />
