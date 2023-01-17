@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const PikachuStyled = styled.img`
-  width: 30%;
+  height: 45vh;
   margin: 2.5rem;
 `;
 
@@ -16,7 +16,7 @@ export const TitleStyled = styled.h1`
   text-shadow: 13px 11px 10px #a90c0c;
   color: #eac912db;
   font-weight: 800;
-  margin: 5rem;
+  margin: 4vh;
   align-self: center;
 `;
 export const SubtitleStyled = styled.p`
@@ -30,7 +30,7 @@ export const NavLinkStyled = styled(NavLink)`
   font-variant: petite-caps;
   text-decoration: auto;
   color: white;
-  margin: 0.3rem;
+  margin: 0.3vh;
   border: solid 2px white;
   padding: 1rem;
   border-radius: 40px;

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from "react";
+import React, { useState, useContext, memo } from "react";
 import { getCoinsContext } from "../context/getCoinsContext";
 import Button from "../components/Button";
 import Cards from "../features/Cards";
@@ -27,4 +27,4 @@ const MyCards = () => {
   );
 };
 
-export default MyCards;
+export default memo(MyCards);

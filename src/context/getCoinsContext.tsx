@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext } from "react";
 export const getCoinsContext = createContext({} as Props);
 
 type Props = {

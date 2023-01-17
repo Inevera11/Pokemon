@@ -5,9 +5,9 @@ type getCoinsProviderProps = {
 };
 
 export const GetCoinsProvider = ({ children }: getCoinsProviderProps) => {
-  const [coins, setCoins] = useState<number>(25);
+  const [coins, setCoins] = useState<number>(15);
   const [pokemonNumber, setPokemonNumber] = useState<number>(20);
-  const clicked = useRef<number>(5);
+  const clicked = useRef<number>(6);
 
   const reduceCoins = (val: number) => {
     if (coins > 0) {
