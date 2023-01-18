@@ -12,7 +12,7 @@ export const HomeStyled = styled.div`
   align-items: center;
 `;
 export const TitleStyled = styled.h1`
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 13px 11px 10px #a90c0c;
   color: #eac912db;
   font-weight: 800;

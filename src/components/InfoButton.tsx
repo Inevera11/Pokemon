@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { CornerDialog } from "evergreen-ui";
-import { ButtonStyled } from "../styles/InfoButtonStyled";
+import {
+  ButtonStyled,
+  TitleStyled,
+  SubitleStyled,
+} from "../styles/InfoButtonStyled";
 
 export const InfoButton = () => {
   const [isShown, setIsShown] = useState(false);
@@ -10,13 +14,16 @@ export const InfoButton = () => {
       <CornerDialog
         hasCancel={false}
         hasFooter={false}
-        title="How to get more money"
+        title={<TitleStyled>How to get more money</TitleStyled>}
         isShown={isShown}
         onCloseComplete={() => setIsShown(false)}
+        width="30vw"
         confirmLabel="Understood"
       >
-        Click on a red pluse next to the money icon. You can increase your funds
-        6 times.
+        <SubitleStyled>
+          Click on a red pluse next to the money icon. You can increase your
+          funds 6 times.
+        </SubitleStyled>
       </CornerDialog>
       <ButtonStyled onClick={() => setIsShown(true)}>i</ButtonStyled>
     </>

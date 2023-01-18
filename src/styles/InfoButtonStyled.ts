@@ -19,3 +19,7 @@ export const ButtonStyled = styled(Button)`
     box-shadow: 0 0 11px 4px #e3edece6;
   }
 `;
+export const TitleStyled = styled.div`
+  font-size: 2em;
+`;
+export const SubitleStyled = styled.div``;

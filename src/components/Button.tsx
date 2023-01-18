@@ -15,6 +15,7 @@ const Button = () => {
   return (
     <>
       {visible && <StyledAlert>pokemons added</StyledAlert>}
+      {/* <StyledAlert>pokemons added</StyledAlert> */}
       <ButtonAndTextStyled>
         <SubtextStyled>5 coins</SubtextStyled>
         <ButtonStyled
@@ -24,7 +25,7 @@ const Button = () => {
               reduceCoins(5);
               setVisible(true);
               if (currTimeout) clearTimeout(currTimeout);
-              setCurrTimeout(setTimeout(() => setVisible(false), 1000));
+              setCurrTimeout(setTimeout(() => setVisible(false), 2000));
             }
           }}
         >
