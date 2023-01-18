@@ -14,6 +14,7 @@
     "@types/styled-components": "^5.1.26",
     "deploy": "^1.0.3",
     "evergreen-ui": "^6.13.3",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.5",
