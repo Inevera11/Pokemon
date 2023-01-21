@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const PikachuStyled = styled.img`
-  height: 45vh;
+  height: 35vh;
   margin: 2.5rem;
 `;
 
